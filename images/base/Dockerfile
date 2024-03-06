@@ -9,7 +9,8 @@ LABEL w4sp=true
 
 ENV DEBIAN_FRONTEND noninteractive
 # fix non apt https and control charators error
-RUN sed -i -e 's/http:/https:/g' -e 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' -e 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list 
+#RUN sed -i -e 's/http:/https:/g' -e 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' -e 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+RUN sed -i -e 's/http:/https:/g' /etc/apt/sources.list 
 RUN apt -o "Acquire::https::Verify-Peer=false" update -y &&apt-get -o "Acquire::https::Verify-Peer=false" install ca-certificates -y
 
 RUN apt-get -y install wireshark tshark 
