@@ -3,9 +3,9 @@ FROM w4sp/labs:base
 
 #install samba
 RUN apt-get install -y samba
-
+RUN sed -i -e 's/lmhosts hosts/lmhosts host/g' /etc/samba/smb.conf
 #set a samba password for the w4sp user to w4spbook
-RUN PASS=w4spbook ; echo ${PASS} | tee - | smbpasswd -a -s w4sp
+RUN (echo "w4spbook";sleep 1;echo "w4spbook")|smbpasswd -a -s w4sp
 
 #add the smbgrp group and add w4sp to the group
 RUN addgroup smbgrp && usermod -a -G smbgrp w4sp

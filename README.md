@@ -4,3 +4,6 @@ This is the lab environment for the Wireshark for Security Professionals book. T
 top of Docker and Kali Linux and provides a realistic network with numerous services useful for learning security fundamentals with Wireshark.
 
 Both Kali and the w4sp-lab are moving targets and are subject to change. Always refer to the [wiki](https://github.com/w4sp-book/w4sp-lab/wiki) for the most recent information regarding working with the lab.
+
+
+## Note for Kali 2020, Ubuntu18.04, Ubuntu 20.04
